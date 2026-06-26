@@ -71,31 +71,35 @@ export function ProductsSection() {
               className="group relative"
             >
               {/* Card Container */}
-              <div className="relative h-full rounded-3xl overflow-hidden bg-white border border-border/40 transition-all duration-500 hover:border-accent/30 hover:shadow-2xl hover:shadow-primary/8 hover-lift">
+              <div className="relative h-full rounded-3xl overflow-hidden bg-white border border-border/40 transition-all duration-500 hover:border-accent/30 hover:shadow-2xl hover:shadow-primary/8 hover-lift flex flex-col">
                 
-                {/* Product Image Container with Elegant Background */}
-                <div className="relative h-72 bg-gradient-to-br from-slate-50 via-white to-slate-100 overflow-hidden flex items-center justify-center p-6">
-                  {/* Subtle Radial Gradient Behind Product */}
-                  <div className="absolute inset-0 bg-radial-gradient from-white via-transparent to-slate-100 opacity-60" />
+                {/* Product Image Container with Elegant Background - Larger */}
+                <div className="relative flex-1 min-h-96 bg-gradient-to-br from-slate-50 via-white to-slate-100 overflow-hidden flex items-center justify-center p-8">
+                  {/* Premium Lighting Effect */}
+                  <div className="absolute inset-0 bg-radial-gradient from-white via-transparent to-slate-100/40 opacity-70" />
+                  <div className="absolute top-0 left-1/4 w-48 h-48 bg-white/40 rounded-full blur-3xl" />
                   
                   {/* Product Image */}
                   <div className="relative z-10 w-full h-full flex items-center justify-center">
                     <Image
                       src={product.image}
                       alt={product.name}
-                      width={280}
-                      height={280}
-                      className="object-contain h-full w-full filter group-hover:scale-105 transition-transform duration-500"
+                      width={320}
+                      height={320}
+                      className="object-contain h-4/5 w-4/5 drop-shadow-sm group-hover:scale-110 transition-transform duration-500"
                       priority={index === 0}
                     />
                   </div>
 
-                  {/* Soft Shadow Effect */}
-                  <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white via-white/50 to-transparent pointer-events-none" />
+                  {/* Soft Vignette Edge Effect */}
+                  <div className="absolute inset-0 rounded-t-3xl shadow-inner pointer-events-none" style={{boxShadow: 'inset 0 0 40px rgba(0,0,0,0.05)'}} />
+                  
+                  {/* Soft Shadow Effect at Bottom */}
+                  <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white via-white/40 to-transparent pointer-events-none" />
                 </div>
 
                 {/* Content Section */}
-                <div className="px-6 py-8 bg-white relative">
+                <div className="px-6 py-8 bg-white relative border-t border-border/20">
                   {/* Product Name */}
                   <h3 className="text-2xl font-bold text-foreground mb-1 font-serif">
                     {product.name}
@@ -107,12 +111,12 @@ export function ProductsSection() {
                   </p>
 
                   {/* Description */}
-                  <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
+                  <p className="text-sm text-muted-foreground mb-5 leading-relaxed">
                     {product.description}
                   </p>
 
                   {/* Highlights Grid */}
-                  <div className="space-y-3 mb-6">
+                  <div className="space-y-2.5 mb-6">
                     {product.highlights.map((highlight, idx) => (
                       <motion.div
                         key={idx}
@@ -121,7 +125,7 @@ export function ProductsSection() {
                         transition={{ duration: 0.4, delay: index * 0.15 + idx * 0.08 }}
                         className="flex items-center gap-3"
                       >
-                        <div className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-accent to-primary flex-shrink-0" />
                         <span className="text-xs text-muted-foreground font-medium">
                           {highlight}
                         </span>
@@ -130,10 +134,10 @@ export function ProductsSection() {
                   </div>
 
                   {/* Divider */}
-                  <div className="h-px bg-gradient-to-r from-transparent via-border/40 to-transparent mb-6" />
+                  <div className="h-px bg-gradient-to-r from-transparent via-border/40 to-transparent mb-5" />
 
                   {/* Bottom Label */}
-                  <div className="text-xs text-muted-foreground text-center font-medium">
+                  <div className="text-xs text-muted-foreground text-center font-medium tracking-wide">
                     Premium Nutraceutical
                   </div>
                 </div>
