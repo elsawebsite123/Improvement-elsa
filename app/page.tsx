@@ -6,6 +6,7 @@ import { ContactSection } from '@/components/contact-section'
 import { Footer } from '@/components/footer'
 import { WhatsAppButton } from '@/components/whatsapp-button'
 import { ValuesSection } from '@/components/values-section'
+import { WhatsAppChannelWidget } from '@/components/whatsapp-channel-widget'
 
 export default function HomePage() {
   return (
@@ -18,6 +19,7 @@ export default function HomePage() {
       <ContactSection />
       <Footer />
       <WhatsAppButton />
+      <WhatsAppChannelWidget />
     </main>
   )
 }
