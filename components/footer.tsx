@@ -9,14 +9,8 @@ const footerLinks = {
   company: [
     { label: 'About Us', href: '#about' },
     { label: 'Our Values', href: '#values' },
-    { label: 'Products', href: '#products' },
+    { label: 'Products', href: '/products/fertelsa' },
     { label: 'Contact', href: '#contact' },
-  ],
-  categories: [
-    { label: 'Women Wellness', href: '#products' },
-    { label: 'Fertility Support', href: '#products' },
-    { label: 'PCOS Support', href: '#products' },
-    { label: 'Pregnancy Wellness', href: '#products' },
   ],
 }
 
@@ -36,7 +30,7 @@ export function Footer() {
       
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
           {/* Brand Column with Logo */}
           <div className="lg:col-span-1">
             <Link href="#home" className="flex items-center gap-4 mb-6 group">
@@ -96,24 +90,6 @@ export function Footer() {
                     className="text-muted-foreground hover:text-primary transition-colors duration-300"
                   >
                     {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Categories */}
-          <div>
-            <h4 className="text-foreground font-semibold mb-6">Categories</h4>
-            <ul className="space-y-3">
-              {footerLinks.categories.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center gap-2"
-                  >
-                    {link.label}
-                    <span className="text-xs px-2 py-0.5 rounded-full bg-accent/10 text-accent font-medium">Soon</span>
                   </Link>
                 </li>
               ))}

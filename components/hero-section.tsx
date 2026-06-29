@@ -137,7 +137,7 @@ export function HeroSection() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Link
-              href="/products"
+              href="/products/fertelsa"
               className="group px-8 py-4 bg-primary text-primary-foreground rounded-full text-base font-medium hover:bg-primary/90 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 flex items-center gap-2"
             >
               Explore Products

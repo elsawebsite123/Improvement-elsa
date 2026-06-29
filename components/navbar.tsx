@@ -3,15 +3,21 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Menu, X, Phone, Mail } from 'lucide-react'
+import { Menu, X, Phone, Mail, ChevronDown } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navLinks = [
   { href: '/#home', label: 'Home' },
   { href: '/#about', label: 'About' },
-  { href: '/products', label: 'Products' },
+  { label: 'Products', submenu: true },
   { href: '/#values', label: 'Our Values' },
   { href: '/#contact', label: 'Contact' },
+]
+
+const productLinks = [
+  { href: '/products/fertelsa', label: 'Fertelsa Sachet' },
+  { href: '/products/elfer', label: 'Elfer Tablet' },
+  { href: '/products/vagoric', label: 'Vagoric Gel' },
 ]
 
 // Subtle DNA/Molecule pattern component
@@ -50,6 +56,8 @@ function BiotechPattern() {
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false)
+  const [isMobileProductsOpen, setIsMobileProductsOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -127,14 +135,60 @@ export function Navbar() {
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-8">
               {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-300 relative group py-2"
-                >
-                  {link.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300 rounded-full" />
-                </Link>
+                link.submenu ? (
+                  <div key="products" className="relative group">
+                    <button
+                      onClick={() => setIsProductsDropdownOpen(!isProductsDropdownOpen)}
+                      onMouseEnter={() => setIsProductsDropdownOpen(true)}
+                      onMouseLeave={() => setIsProductsDropdownOpen(false)}
+                      className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-300 relative py-2 flex items-center gap-1"
+                    >
+                      {link.label}
+                      <ChevronDown className="w-4 h-4 transition-transform duration-300" style={{transform: isProductsDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)'}} />
+                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300 rounded-full" />
+                    </button>
+                    
+                    {/* Dropdown Menu */}
+                    <AnimatePresence>
+                      {isProductsDropdownOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          transition={{ duration: 0.2 }}
+                          onMouseEnter={() => setIsProductsDropdownOpen(true)}
+                          onMouseLeave={() => setIsProductsDropdownOpen(false)}
+                          className="absolute top-full mt-2 left-0 bg-white rounded-2xl shadow-xl border border-border/20 py-2 min-w-max z-50"
+                        >
+                          {productLinks.map((product, index) => (
+                            <motion.div
+                              key={product.href}
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: index * 0.05 }}
+                            >
+                              <Link
+                                href={product.href}
+                                className="px-6 py-3 text-sm font-medium text-muted-foreground hover:text-primary hover:bg-primary/5 flex items-center gap-2 transition-all duration-200 first:rounded-t-xl last:rounded-b-xl"
+                              >
+                                {product.label}
+                              </Link>
+                            </motion.div>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ) : (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-300 relative group py-2"
+                  >
+                    {link.label}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300 rounded-full" />
+                  </Link>
+                )
               ))}
             </div>
 
@@ -203,18 +257,57 @@ export function Navbar() {
                   <nav className="px-4 space-y-1">
                     {navLinks.map((link, index) => (
                       <motion.div
-                        key={link.href}
+                        key={link.submenu ? 'products' : link.href}
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.05 + 0.1 }}
                       >
-                        <Link
-                          href={link.href}
-                          onClick={() => setIsMobileMenuOpen(false)}
-                          className="flex items-center px-4 py-3.5 text-base font-medium text-foreground hover:text-primary hover:bg-gradient-to-r hover:from-primary/5 hover:to-accent/5 rounded-xl transition-all duration-200"
-                        >
-                          {link.label}
-                        </Link>
+                        {link.submenu ? (
+                          <div>
+                            <button
+                              onClick={() => setIsMobileProductsOpen(!isMobileProductsOpen)}
+                              className="w-full flex items-center justify-between px-4 py-3.5 text-base font-medium text-foreground hover:text-primary hover:bg-gradient-to-r hover:from-primary/5 hover:to-accent/5 rounded-xl transition-all duration-200"
+                            >
+                              {link.label}
+                              <ChevronDown className="w-4 h-4 transition-transform duration-300" style={{transform: isMobileProductsOpen ? 'rotate(180deg)' : 'rotate(0deg)'}} />
+                            </button>
+                            <AnimatePresence>
+                              {isMobileProductsOpen && (
+                                <motion.div
+                                  initial={{ opacity: 0, height: 0 }}
+                                  animate={{ opacity: 1, height: 'auto' }}
+                                  exit={{ opacity: 0, height: 0 }}
+                                  transition={{ duration: 0.2 }}
+                                  className="overflow-hidden"
+                                >
+                                  <div className="ps-6 space-y-1 pt-2">
+                                    {productLinks.map((product) => (
+                                      <Link
+                                        key={product.href}
+                                        href={product.href}
+                                        onClick={() => {
+                                          setIsMobileMenuOpen(false)
+                                          setIsMobileProductsOpen(false)
+                                        }}
+                                        className="flex items-center px-4 py-3.5 text-sm font-medium text-muted-foreground hover:text-primary hover:bg-gradient-to-r hover:from-primary/5 hover:to-accent/5 rounded-lg transition-all duration-200"
+                                      >
+                                        {product.label}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
+                          </div>
+                        ) : (
+                          <Link
+                            href={link.href}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="flex items-center px-4 py-3.5 text-base font-medium text-foreground hover:text-primary hover:bg-gradient-to-r hover:from-primary/5 hover:to-accent/5 rounded-xl transition-all duration-200"
+                          >
+                            {link.label}
+                          </Link>
+                        )}
                       </motion.div>
                     ))}
                   </nav>
