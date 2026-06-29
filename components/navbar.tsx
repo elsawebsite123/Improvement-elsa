@@ -7,11 +7,11 @@ import { Menu, X, Phone, Mail } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navLinks = [
-  { href: '#home', label: 'Home' },
-  { href: '#about', label: 'About' },
+  { href: '/#home', label: 'Home' },
+  { href: '/#about', label: 'About' },
   { href: '/products', label: 'Products' },
-  { href: '#values', label: 'Our Values' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/#values', label: 'Our Values' },
+  { href: '/#contact', label: 'Contact' },
 ]
 
 // Subtle DNA/Molecule pattern component
@@ -90,7 +90,7 @@ export function Navbar() {
           <div className="flex items-center justify-between h-18 lg:h-22">
             {/* Logo Section with Company Name and Tagline */}
             <Link 
-              href="#home" 
+              href="/" 
               className="flex items-center gap-3 lg:gap-4 z-50 group py-2"
             >
               {/* Logo Image - Larger and Dominant */}
@@ -141,7 +141,7 @@ export function Navbar() {
             {/* Desktop CTA Button */}
             <div className="hidden lg:flex items-center gap-4">
               <Link
-                href="#contact"
+                href="/#contact"
                 className="px-6 py-2.5 bg-gradient-to-r from-primary to-primary/90 text-primary-foreground rounded-full text-sm font-medium hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 hover:-translate-y-0.5"
               >
                 Get in Touch
@@ -224,7 +224,7 @@ export function Navbar() {
                 <div className="p-4 border-t border-gray-100 bg-gradient-to-t from-gray-50/80 to-white">
                   {/* CTA Button */}
                   <Link
-                    href="#contact"
+                    href="/#contact"
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="flex items-center justify-center w-full px-4 py-3.5 bg-gradient-to-r from-primary to-primary/90 text-primary-foreground rounded-xl text-sm font-medium hover:shadow-lg transition-all duration-300 mb-4"
                   >
