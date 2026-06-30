@@ -5,6 +5,7 @@ import { ContactSection } from '@/components/contact-section'
 import { Footer } from '@/components/footer'
 import { WhatsAppButton } from '@/components/whatsapp-button'
 import { ValuesSection } from '@/components/values-section'
+import { FloatingWhatsAppWidget } from '@/components/floating-whatsapp-widget'
 
 export default function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default function HomePage() {
       <ContactSection />
       <Footer />
       <WhatsAppButton />
+      <FloatingWhatsAppWidget />
     </main>
   )
 }

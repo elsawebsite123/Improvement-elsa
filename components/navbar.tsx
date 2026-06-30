@@ -1,10 +1,13 @@
 "use client"
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Menu, X, Phone, Mail, ChevronDown } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+
+// Store navbar state for external access
+let navbarStateRef: { openProducts: () => void } | null = null
 
 const navLinks = [
   { href: '/#home', label: 'Home' },
@@ -58,6 +61,16 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false)
   const [isMobileProductsOpen, setIsMobileProductsOpen] = useState(false)
+
+  // Store state ref for external access
+  useEffect(() => {
+    navbarStateRef = {
+      openProducts: () => setIsProductsDropdownOpen(true)
+    }
+    return () => {
+      navbarStateRef = null
+    }
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -351,4 +364,8 @@ export function Navbar() {
       </AnimatePresence>
     </>
   )
+}
+
+export function openProductsDropdown() {
+  navbarStateRef?.openProducts()
 }

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { ArrowRight, ChevronDown } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { openProductsDropdown } from './navbar'
 
 export function HeroSection() {
   return (
@@ -136,13 +137,16 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <Link
-              href="/products/fertelsa"
-              className="group px-8 py-4 bg-primary text-primary-foreground rounded-full text-base font-medium hover:bg-primary/90 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 flex items-center gap-2"
+            <button
+              onClick={() => {
+                openProductsDropdown()
+                window.scrollTo({ top: 0, behavior: 'smooth' })
+              }}
+              className="group px-8 py-4 bg-primary text-primary-foreground rounded-full text-base font-medium hover:bg-primary/90 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 flex items-center gap-2 cursor-pointer"
             >
               Explore Products
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            </button>
             <Link
               href="#about"
               className="px-8 py-4 bg-secondary text-secondary-foreground rounded-full text-base font-medium hover:bg-secondary/80 transition-all duration-300 border border-border"
