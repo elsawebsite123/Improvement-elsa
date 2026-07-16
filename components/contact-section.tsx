@@ -102,7 +102,7 @@ export function ContactSection() {
             {"Let's"} Connect
           </h2>
           <p className="text-2xl sm:text-3xl md:text-3xl font-bold text-foreground mb-2 max-w-fit mx-auto">Elsa Core Industry</p>
-          <p className="text-lg sm:text-lg md:text-lg text-primary uppercase tracking-wider mb-6 max-w-fit mx-auto">Innovation for Wellness</p>
+          <p className="text-sm sm:text-sm md:text-sm text-primary uppercase tracking-wider mb-6 max-w-fit mx-auto">Innovation for Wellness</p>
           <p className="text-base text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Have questions about our upcoming products or want to learn more? 
             {"We'd"} love to hear from you.
