@@ -101,8 +101,8 @@ export function ContactSection() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             {"Let's"} Connect
           </h2>
-          <p className="text-sm font-medium text-primary mb-2">Elsa Core Industry</p>
-          <p className="text-xs text-muted-foreground uppercase tracking-wider mb-6">Innovation for Wellness</p>
+          <p className="text-2xl sm:text-3xl md:text-3xl font-bold text-foreground mb-2 max-w-fit mx-auto">Elsa Core Industry</p>
+          <p className="text-lg sm:text-lg md:text-lg text-primary uppercase tracking-wider mb-6 max-w-fit mx-auto">Innovation for Wellness</p>
           <p className="text-base text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Have questions about our upcoming products or want to learn more? 
             {"We'd"} love to hear from you.

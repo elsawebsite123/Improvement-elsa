@@ -99,22 +99,22 @@ export function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* Company Name - VERY LARGE and DOMINANT */}
+          {/* Company Name - Slightly larger than tagline */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-foreground leading-tight mb-4 font-serif"
+            className="text-4xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-foreground leading-tight mb-3 font-serif max-w-fit mx-auto"
           >
             <span className="block">Elsa Core Industry</span>
           </motion.h1>
 
-          {/* Tagline - Much smaller */}
+          {/* Tagline - Smaller, won't exceed company name width */}
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-base sm:text-lg md:text-lg lg:text-xl font-light text-primary mb-4 tracking-wide inline-block"
+            className="text-lg sm:text-lg md:text-lg lg:text-lg font-light text-primary mb-4 tracking-wide max-w-fit mx-auto"
           >
             Innovation for Wellness
           </motion.p>

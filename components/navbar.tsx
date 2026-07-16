@@ -146,12 +146,12 @@ export function Navbar() {
                 <div className="absolute inset-0 bg-accent/10 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
               </motion.div>
               
-              {/* Company Name and Tagline - Smaller than logo */}
+              {/* Company Name and Tagline */}
               <div className="flex flex-col">
-                <span className="text-sm lg:text-base font-semibold text-foreground tracking-tight leading-tight group-hover:text-primary transition-colors duration-300">
+                <span className="text-sm lg:text-base font-bold text-foreground tracking-tight leading-tight group-hover:text-primary transition-colors duration-300">
                   Elsa Core Industry
                 </span>
-                <span className="text-[9px] lg:text-[10px] text-muted-foreground font-medium tracking-wider uppercase">
+                <span className="text-[9px] lg:text-[9px] text-muted-foreground font-medium tracking-wider uppercase">
                   Innovation for Wellness
                 </span>
               </div>
@@ -295,7 +295,7 @@ export function Navbar() {
                     className="object-contain"
                   />
                   <div className="flex flex-col">
-                    <span className="text-xs font-semibold text-foreground">Elsa Core Industry</span>
+                    <span className="text-sm font-bold text-foreground">Elsa Core Industry</span>
                     <span className="text-[9px] text-muted-foreground uppercase tracking-wider">Innovation for Wellness</span>
                   </div>
                 </div>

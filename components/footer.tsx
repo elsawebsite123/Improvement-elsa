@@ -47,9 +47,9 @@ export function Footer() {
                   className="object-contain w-14 h-14 lg:w-16 lg:h-16 drop-shadow-sm"
                 />
               </motion.div>
-              {/* Company Name - Smaller than logo */}
+              {/* Company Name */}
               <div className="flex flex-col">
-                <span className="text-base font-semibold text-foreground tracking-tight group-hover:text-primary transition-colors">
+                <span className="text-base font-bold text-foreground tracking-tight group-hover:text-primary transition-colors">
                   Elsa Core Industry
                 </span>
                 <span className="text-[10px] text-muted-foreground uppercase tracking-wider">

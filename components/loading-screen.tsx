@@ -89,10 +89,10 @@ export function LoadingScreen({ isLoading = true, minDuration = 2000 }: LoadingS
               transition={{ delay: 0.3, duration: 0.5 }}
               className="text-center"
             >
-              <h1 className="text-lg sm:text-xl font-semibold text-foreground tracking-tight mb-1">
+              <h1 className="text-lg sm:text-xl font-bold text-foreground tracking-tight mb-1 max-w-fit mx-auto">
                 Elsa Core Industry
               </h1>
-              <p className="text-xs text-muted-foreground uppercase tracking-widest">
+              <p className="text-xs text-muted-foreground uppercase tracking-widest max-w-fit mx-auto">
                 Innovation for Wellness
               </p>
             </motion.div>

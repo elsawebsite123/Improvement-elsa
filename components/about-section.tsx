@@ -289,10 +289,10 @@ export function AboutSection() {
                     className="object-contain w-14 h-14 lg:w-16 lg:h-16 drop-shadow-sm"
                   />
                   <div>
-                    <h3 className="text-xl lg:text-2xl font-bold text-foreground">
+                    <h3 className="text-xl lg:text-2xl font-bold text-foreground max-w-fit">
                       Elsa Core Industry
                     </h3>
-                    <p className="text-xs text-muted-foreground uppercase tracking-wider">
+                    <p className="text-xs text-muted-foreground uppercase tracking-wider max-w-fit">
                       Innovation for Wellness
                     </p>
                   </div>
