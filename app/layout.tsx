@@ -16,14 +16,15 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'Elsa Core Industry | Innovation for Wellness',
-  description: 'Elsa Core Industry is a premium nutraceutical and wellness company dedicated to innovation in healthcare. Based in Karachi, Pakistan.',
-  keywords: ['nutraceutical', 'wellness', 'pharmaceutical', 'healthcare', 'supplements', 'Pakistan', 'Karachi'],
+  title: 'Elsa Core Industry - Premium Nutraceutical & Wellness Solutions',
+  description: 'Elsa Core Industry delivers premium nutraceutical solutions for reproductive wellness, daily health, and intimate care. Fertelsa, Elfer, and Vagoric - scientifically formulated for better health.',
+  keywords: ['nutraceutical', 'wellness', 'pharmaceutical', 'healthcare', 'supplements', 'Pakistan', 'Karachi', 'Fertelsa', 'Elfer', 'Vagoric', 'fertility support', 'iron supplement', 'vaginal health'],
   authors: [{ name: 'Elsa Core Industry' }],
   creator: 'Elsa Core Industry',
+  publisher: 'Elsa Core Industry',
   openGraph: {
-    title: 'Elsa Core Industry | Innovation for Wellness',
-    description: 'Premium nutraceutical and wellness solutions for a healthier tomorrow.',
+    title: 'Elsa Core Industry - Premium Nutraceutical & Wellness Solutions',
+    description: 'Discover premium nutraceutical products for reproductive wellness, daily health, and intimate care. Trusted by thousands for quality and innovation.',
     url: 'https://elsacoreindustry.pk',
     siteName: 'Elsa Core Industry',
     locale: 'en_US',
@@ -31,8 +32,24 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Elsa Core Industry | Innovation for Wellness',
+    title: 'Elsa Core Industry - Premium Nutraceutical & Wellness Solutions',
     description: 'Premium nutraceutical and wellness solutions for a healthier tomorrow.',
+    creator: '@elsacoreindustry',
+  },
+  metadataBase: new URL('https://elsacoreindustry.pk'),
+  alternates: {
+    canonical: 'https://elsacoreindustry.pk',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 
