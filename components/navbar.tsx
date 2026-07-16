@@ -148,10 +148,10 @@ export function Navbar() {
               
               {/* Company Name and Tagline */}
               <div className="flex flex-col">
-                <span className="text-sm lg:text-base font-bold text-foreground tracking-tight leading-tight group-hover:text-primary transition-colors duration-300">
+                <span className="text-base lg:text-lg font-bold text-foreground tracking-tight leading-tight group-hover:text-primary transition-colors duration-300">
                   Elsa Core Industry
                 </span>
-                <span className="text-[9px] lg:text-[9px] text-muted-foreground font-medium tracking-wider uppercase">
+                <span className="text-[8px] lg:text-[8px] text-muted-foreground font-medium tracking-wider uppercase">
                   Innovation for Wellness
                 </span>
               </div>
