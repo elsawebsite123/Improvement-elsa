@@ -18,9 +18,21 @@ const navLinks = [
 ]
 
 const productLinks = [
-  { href: '/products/fertelsa', label: 'Fertelsa Sachet' },
-  { href: '/products/elfer', label: 'Elfer Tablet' },
-  { href: '/products/vagoric', label: 'Vagoric Gel' },
+  { 
+    href: '/products/fertelsa', 
+    label: 'Fertelsa Sachet',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260520-WA0004-fVVBdLg4IXP535VWB0RBjdtGYNAu4I.jpg'
+  },
+  { 
+    href: '/products/elfer', 
+    label: 'Elfer Tablet',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260520-WA0007-RYiAbmxYeMNxqUFP99rLR7z6Travax.jpg'
+  },
+  { 
+    href: '/products/vagoric', 
+    label: 'Vagoric Gel',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260520-WA0003-IohnUfXewGifZuTF3gWVBrtKfwsWgR.jpg'
+  },
 ]
 
 // Subtle DNA/Molecule pattern component
@@ -171,23 +183,46 @@ export function Navbar() {
                           transition={{ duration: 0.2 }}
                           onMouseEnter={() => setIsProductsDropdownOpen(true)}
                           onMouseLeave={() => setIsProductsDropdownOpen(false)}
-                          className="absolute top-full mt-2 left-0 bg-white rounded-2xl shadow-xl border border-border/20 py-2 min-w-max z-50"
+                          className="absolute top-full mt-2 left-0 bg-white rounded-2xl shadow-2xl border border-border/10 p-3 z-50 w-80"
                         >
-                          {productLinks.map((product, index) => (
-                            <motion.div
-                              key={product.href}
-                              initial={{ opacity: 0, x: -10 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{ delay: index * 0.05 }}
-                            >
-                              <Link
-                                href={product.href}
-                                className="px-6 py-3 text-sm font-medium text-muted-foreground hover:text-primary hover:bg-primary/5 flex items-center gap-2 transition-all duration-200 first:rounded-t-xl last:rounded-b-xl"
+                          <div className="grid grid-cols-1 gap-2">
+                            {productLinks.map((product, index) => (
+                              <motion.div
+                                key={product.href}
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: index * 0.08 }}
                               >
-                                {product.label}
-                              </Link>
-                            </motion.div>
-                          ))}
+                                <Link
+                                  href={product.href}
+                                  className="flex items-center gap-4 p-3 rounded-xl hover:bg-primary/8 transition-all duration-200 group cursor-pointer"
+                                >
+                                  <div className="relative w-16 h-16 flex-shrink-0 bg-gradient-to-br from-slate-50 to-slate-100 rounded-lg overflow-hidden flex items-center justify-center">
+                                    <Image
+                                      src={product.image}
+                                      alt={product.label}
+                                      width={60}
+                                      height={60}
+                                      className="object-contain w-14 h-14"
+                                    />
+                                  </div>
+                                  <div className="flex-1 min-w-0">
+                                    <h4 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors truncate">
+                                      {product.label}
+                                    </h4>
+                                    <p className="text-xs text-muted-foreground group-hover:text-muted-foreground/80 transition-colors">
+                                      Premium Formula
+                                    </p>
+                                  </div>
+                                  <div className="flex-shrink-0">
+                                    <svg className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                    </svg>
+                                  </div>
+                                </Link>
+                              </motion.div>
+                            ))}
+                          </div>
                         </motion.div>
                       )}
                     </AnimatePresence>
@@ -293,7 +328,7 @@ export function Navbar() {
                                   transition={{ duration: 0.2 }}
                                   className="overflow-hidden"
                                 >
-                                  <div className="ps-6 space-y-1 pt-2">
+                                  <div className="ps-2 space-y-2 pt-2 pb-2">
                                     {productLinks.map((product) => (
                                       <Link
                                         key={product.href}
@@ -302,9 +337,25 @@ export function Navbar() {
                                           setIsMobileMenuOpen(false)
                                           setIsMobileProductsOpen(false)
                                         }}
-                                        className="flex items-center px-4 py-3.5 text-sm font-medium text-muted-foreground hover:text-primary hover:bg-gradient-to-r hover:from-primary/5 hover:to-accent/5 rounded-lg transition-all duration-200"
+                                        className="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-primary/8 transition-all duration-200 group"
                                       >
-                                        {product.label}
+                                        <div className="relative w-14 h-14 flex-shrink-0 bg-gradient-to-br from-slate-50 to-slate-100 rounded-lg overflow-hidden flex items-center justify-center">
+                                          <Image
+                                            src={product.image}
+                                            alt={product.label}
+                                            width={56}
+                                            height={56}
+                                            className="object-contain w-12 h-12"
+                                          />
+                                        </div>
+                                        <div className="flex-1 min-w-0">
+                                          <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors truncate">
+                                            {product.label}
+                                          </p>
+                                          <p className="text-xs text-muted-foreground truncate">
+                                            Premium Formula
+                                          </p>
+                                        </div>
                                       </Link>
                                     ))}
                                   </div>
