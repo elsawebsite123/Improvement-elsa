@@ -3,7 +3,7 @@
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { WhatsAppButton } from '@/components/whatsapp-button'
-import { WhatsAppChannelWidget } from '@/components/whatsapp-channel-widget'
+import { ProductCommerce } from '@/components/product-commerce'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
@@ -109,6 +109,7 @@ export default function VagoricPage() {
               </div>
             </motion.div>
           </div>
+          <ProductCommerce productName="Vagoric Gel" oldPrice="PKR 918" price="PKR 780" />
         </div>
       </section>
 
@@ -197,7 +198,6 @@ export default function VagoricPage() {
 
       <Footer />
       <WhatsAppButton />
-      <WhatsAppChannelWidget />
     </main>
   )
 }

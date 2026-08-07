@@ -77,7 +77,11 @@ export function Navbar() {
   // Store state ref for external access
   useEffect(() => {
     navbarStateRef = {
-      openProducts: () => setIsProductsDropdownOpen(true)
+      openProducts: () => {
+        setIsProductsDropdownOpen(true)
+        setIsMobileMenuOpen(true)
+        setIsMobileProductsOpen(true)
+      }
     }
     return () => {
       navbarStateRef = null

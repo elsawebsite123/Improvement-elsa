@@ -3,7 +3,7 @@
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { WhatsAppButton } from '@/components/whatsapp-button'
-import { WhatsAppChannelWidget } from '@/components/whatsapp-channel-widget'
+import { ProductCommerce } from '@/components/product-commerce'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
@@ -111,6 +111,7 @@ export default function FertelsaPage() {
               </div>
             </motion.div>
           </div>
+          <ProductCommerce productName="Fertelsa Sachet" oldPrice="PKR 2,080" price="PKR 1,770" />
         </div>
       </section>
 
@@ -199,7 +200,6 @@ export default function FertelsaPage() {
 
       <Footer />
       <WhatsAppButton />
-      <WhatsAppChannelWidget />
     </main>
   )
 }

@@ -5,71 +5,75 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { MessageCircle, X } from 'lucide-react'
 
 export function WhatsAppChannelWidget() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
 
   return (
-    <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3 pointer-events-none">
-      {/* Floating Button */}
-      <motion.button
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 rounded-full bg-green-500 text-white shadow-lg shadow-green-500/30 flex items-center justify-center hover:shadow-xl hover:shadow-green-500/40 transition-all duration-300 relative pointer-events-auto cursor-pointer"
-        aria-label="WhatsApp Channel"
-      >
-        {/* Pulse animation */}
-        <motion.div
-          animate={{ scale: [1, 1.2, 1] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="absolute inset-0 rounded-full bg-green-500/20 -z-10 pointer-events-none"
-        />
-        <MessageCircle size={24} className="drop-shadow-sm relative z-10" />
-      </motion.button>
-
-      {/* Widget Card */}
+    <div className="pointer-events-none fixed bottom-0 right-4 z-40 flex max-w-[calc(100vw-2rem)] flex-col items-end gap-3 sm:bottom-6 sm:right-6">
       <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.8, y: 20 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="w-80 bg-white rounded-3xl shadow-2xl shadow-green-500/20 border border-green-500/20 overflow-hidden pointer-events-auto"
+        {isVisible && (
+          <motion.aside
+            initial={{ opacity: 0, y: 24, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 24, scale: 0.96 }}
+            transition={{ type: 'spring', stiffness: 280, damping: 24 }}
+            className="pointer-events-auto w-full max-w-sm overflow-hidden rounded-3xl border border-accent/20 bg-card shadow-2xl shadow-primary/15 max-sm:max-h-28 max-sm:translate-y-6"
           >
-            {/* Header */}
-            <div className="bg-gradient-to-r from-green-500 to-green-600 px-6 py-4 flex items-start justify-between">
-              <div>
-                <h3 className="text-lg font-bold text-white">🌿 Daily Health Tips</h3>
+            <div className="flex items-start justify-between gap-4 bg-primary px-5 py-4 text-primary-foreground sm:px-6">
+              <div className="flex items-center gap-3">
+                <div className="flex size-10 shrink-0 items-center justify-center rounded-2xl bg-primary-foreground/15" aria-hidden="true">
+                  <MessageCircle className="size-5" />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-foreground/75">Daily wellness</p>
+                  <h2 className="mt-1 font-serif text-lg font-bold">Daily Health Tips</h2>
+                </div>
               </div>
-              <button
-                onClick={() => setIsOpen(false)}
-                className="text-white hover:bg-green-600/50 p-1 rounded transition-colors"
-                aria-label="Close"
-              >
-                <X size={20} />
-              </button>
+              <div className="flex items-center gap-2">
+                <a
+                  href="https://whatsapp.com/channel/0029VbD6dnR3wtbGmJBSbB3P"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full bg-primary-foreground/15 px-3 py-2 text-xs font-semibold sm:hidden"
+                >
+                  Join
+                </a>
+                <button
+                  onClick={() => setIsVisible(false)}
+                  className="rounded-full p-1.5 text-primary-foreground/80 transition-colors hover:bg-primary-foreground/15 hover:text-primary-foreground"
+                  aria-label="Close health tips banner"
+                >
+                  <X className="size-4" />
+                </button>
+              </div>
             </div>
-
-            {/* Body */}
-            <div className="px-6 py-5">
-              <p className="text-sm text-gray-600 leading-relaxed mb-5">
-                Join our official WhatsApp Channel for daily evidence-based health tips, healthy lifestyle recommendations, nutrition guidance, preventive healthcare advice, and patient education to help you and your family live healthier.
-              </p>
-              
-              {/* Button */}
+            <div className="p-5 sm:p-6">
+              <p className="hidden text-sm leading-6 text-muted-foreground sm:block">Join our official WhatsApp Channel and receive daily evidence-based health tips, healthy lifestyle guidance, nutrition recommendations, wellness education, and preventive healthcare updates.</p>
               <a
                 href="https://whatsapp.com/channel/0029VbD6dnR3wtbGmJBSbB3P"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
+                className="mt-0 hidden w-full items-center justify-center gap-2 rounded-xl bg-accent px-4 py-3 text-sm font-semibold text-accent-foreground transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-accent/20 sm:mt-5 sm:inline-flex"
               >
-                <MessageCircle size={18} />
+                <MessageCircle className="size-4" aria-hidden="true" />
                 Join Our WhatsApp Channel
               </a>
             </div>
-          </motion.div>
+          </motion.aside>
         )}
       </AnimatePresence>
+      {!isVisible && (
+        <motion.button
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          whileHover={{ scale: 1.06 }}
+          whileTap={{ scale: 0.96 }}
+          onClick={() => setIsVisible(true)}
+          className="pointer-events-auto flex size-14 items-center justify-center rounded-full bg-accent text-accent-foreground shadow-lg shadow-accent/25"
+          aria-label="Open daily health tips banner"
+        >
+          <MessageCircle className="size-6" />
+        </motion.button>
+      )}
     </div>
   )
 }
