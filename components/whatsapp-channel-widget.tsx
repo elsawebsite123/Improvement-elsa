@@ -1,79 +1,82 @@
 'use client'
 
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { MessageCircle, X } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { MessageCircle } from 'lucide-react'
+
+const CHANNEL_URL = 'https://whatsapp.com/channel/0029VbD6dnR3wtbGmJBSbB3P'
 
 export function WhatsAppChannelWidget() {
-  const [isVisible, setIsVisible] = useState(true)
+  const [isExpanded, setIsExpanded] = useState(false)
+  const widgetRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (widgetRef.current && !widgetRef.current.contains(event.target as Node)) {
+        setIsExpanded(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleOutsideClick)
+    return () => document.removeEventListener('mousedown', handleOutsideClick)
+  }, [])
 
   return (
-    <div className="pointer-events-none fixed bottom-0 right-4 z-40 flex max-w-[calc(100vw-2rem)] flex-col items-end gap-3 sm:bottom-6 sm:right-6">
-      <AnimatePresence>
-        {isVisible && (
-          <motion.aside
-            initial={{ opacity: 0, y: 24, scale: 0.96 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 24, scale: 0.96 }}
-            transition={{ type: 'spring', stiffness: 280, damping: 24 }}
-            className="pointer-events-auto w-full max-w-sm overflow-hidden rounded-3xl border border-accent/20 bg-card shadow-2xl shadow-primary/15 max-sm:max-h-28 max-sm:translate-y-6"
-          >
-            <div className="flex items-start justify-between gap-4 bg-primary px-5 py-4 text-primary-foreground sm:px-6">
-              <div className="flex items-center gap-3">
-                <div className="flex size-10 shrink-0 items-center justify-center rounded-2xl bg-primary-foreground/15" aria-hidden="true">
-                  <MessageCircle className="size-5" />
-                </div>
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-foreground/75">Daily wellness</p>
-                  <h2 className="mt-1 font-serif text-lg font-bold">Daily Health Tips</h2>
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
+    <div className="pointer-events-none fixed inset-x-0 bottom-5 z-40 flex justify-center px-5 sm:bottom-6 sm:justify-end sm:px-6">
+      <motion.aside
+        ref={widgetRef}
+        layout
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.28, ease: 'easeOut' }}
+        className="pointer-events-auto w-full max-w-[min(22rem,calc(100vw-2.5rem))] overflow-hidden rounded-[20px] border border-primary-foreground/15 bg-primary text-primary-foreground shadow-2xl shadow-primary/25"
+      >
+        <button
+          type="button"
+          onClick={() => setIsExpanded((expanded) => !expanded)}
+          aria-expanded={isExpanded}
+          aria-controls="whatsapp-health-tips-details"
+          className="flex w-full items-center gap-3 px-4 py-3 text-left transition-colors duration-200 hover:bg-primary-foreground/10 sm:px-5"
+        >
+          <span className="flex size-10 shrink-0 items-center justify-center rounded-[18px] bg-primary-foreground/15" aria-hidden="true">
+            <MessageCircle className="size-5" />
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-primary-foreground/70">Elsa Core Industry</span>
+            <span className="mt-0.5 block truncate font-serif text-base font-bold">Daily Health Tips</span>
+          </span>
+          <span className="shrink-0 text-xs font-medium text-primary-foreground/70">{isExpanded ? 'Close' : 'Learn more'}</span>
+        </button>
+
+        <AnimatePresence initial={false}>
+          {isExpanded && (
+            <motion.div
+              id="whatsapp-health-tips-details"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.24, ease: 'easeInOut' }}
+              className="overflow-hidden"
+            >
+              <div className="border-t border-primary-foreground/15 px-4 pb-4 pt-3 sm:px-5 sm:pb-5">
+                <p className="text-sm leading-6 text-primary-foreground/85">
+                  Receive free daily health tips, nutrition guidance, wellness recommendations, and preventive healthcare updates from Elsa Core Industry.
+                </p>
                 <a
-                  href="https://whatsapp.com/channel/0029VbD6dnR3wtbGmJBSbB3P"
+                  href={CHANNEL_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full bg-primary-foreground/15 px-3 py-2 text-xs font-semibold sm:hidden"
+                  onClick={(event) => event.stopPropagation()}
+                  className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary-foreground px-4 py-3 text-sm font-semibold text-primary transition-colors duration-200 hover:bg-primary-foreground/90"
                 >
-                  Join
+                  <MessageCircle className="size-4" aria-hidden="true" />
+                  Join WhatsApp Channel
                 </a>
-                <button
-                  onClick={() => setIsVisible(false)}
-                  className="rounded-full p-1.5 text-primary-foreground/80 transition-colors hover:bg-primary-foreground/15 hover:text-primary-foreground"
-                  aria-label="Close health tips banner"
-                >
-                  <X className="size-4" />
-                </button>
               </div>
-            </div>
-            <div className="p-5 sm:p-6">
-              <p className="hidden text-sm leading-6 text-muted-foreground sm:block">Join our official WhatsApp Channel and receive daily evidence-based health tips, healthy lifestyle guidance, nutrition recommendations, wellness education, and preventive healthcare updates.</p>
-              <a
-                href="https://whatsapp.com/channel/0029VbD6dnR3wtbGmJBSbB3P"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-0 hidden w-full items-center justify-center gap-2 rounded-xl bg-accent px-4 py-3 text-sm font-semibold text-accent-foreground transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-accent/20 sm:mt-5 sm:inline-flex"
-              >
-                <MessageCircle className="size-4" aria-hidden="true" />
-                Join Our WhatsApp Channel
-              </a>
-            </div>
-          </motion.aside>
-        )}
-      </AnimatePresence>
-      {!isVisible && (
-        <motion.button
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          whileHover={{ scale: 1.06 }}
-          whileTap={{ scale: 0.96 }}
-          onClick={() => setIsVisible(true)}
-          className="pointer-events-auto flex size-14 items-center justify-center rounded-full bg-accent text-accent-foreground shadow-lg shadow-accent/25"
-          aria-label="Open daily health tips banner"
-        >
-          <MessageCircle className="size-6" />
-        </motion.button>
-      )}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.aside>
     </div>
   )
 }

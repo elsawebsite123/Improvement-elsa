@@ -2,7 +2,6 @@
 
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
-import { WhatsAppButton } from '@/components/whatsapp-button'
 import { ProductCommerce } from '@/components/product-commerce'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
@@ -199,7 +198,6 @@ export default function FertelsaPage() {
       </section>
 
       <Footer />
-      <WhatsAppButton />
     </main>
   )
 }
