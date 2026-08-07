@@ -234,7 +234,7 @@ export function Navbar() {
                 ) : (
                   <Link
                     key={link.href}
-                    href={link.href}
+                    href={link.href ?? '#'}
                     className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-300 relative group py-2"
                   >
                     {link.label}
@@ -341,15 +341,15 @@ export function Navbar() {
                                           setIsMobileMenuOpen(false)
                                           setIsMobileProductsOpen(false)
                                         }}
-                                        className="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-primary/8 transition-all duration-200 group"
+                                        className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/8 transition-all duration-200 group"
                                       >
-                                        <div className="relative w-14 h-14 flex-shrink-0 bg-gradient-to-br from-slate-50 to-slate-100 rounded-lg overflow-hidden flex items-center justify-center">
+                                        <div className="relative size-10 flex-shrink-0 bg-gradient-to-br from-slate-50 to-slate-100 rounded-lg overflow-hidden flex items-center justify-center">
                                           <Image
                                             src={product.image}
                                             alt={product.label}
-                                            width={56}
-                                            height={56}
-                                            className="object-contain w-12 h-12"
+                                            width={40}
+                                            height={40}
+                                            className="object-contain size-8"
                                           />
                                         </div>
                                         <div className="flex-1 min-w-0">
@@ -369,7 +369,7 @@ export function Navbar() {
                           </div>
                         ) : (
                           <Link
-                            href={link.href}
+                            href={link.href ?? '#'}
                             onClick={() => setIsMobileMenuOpen(false)}
                             className="flex items-center px-4 py-3.5 text-base font-medium text-foreground hover:text-primary hover:bg-gradient-to-r hover:from-primary/5 hover:to-accent/5 rounded-xl transition-all duration-200"
                           >
@@ -393,24 +393,26 @@ export function Navbar() {
                   </Link>
 
                   {/* Quick Contact */}
-                  <div className="space-y-2">
-                    <a
-                      href="https://wa.me/923233297883"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-3 px-3 py-2.5 text-sm text-muted-foreground hover:text-primary rounded-lg hover:bg-white transition-colors"
-                    >
-                      <Phone size={14} />
-                      <span>+92 323 329 7883</span>
-                    </a>
-                    <a
-                      href="mailto:info@elsacoreindustry.pk"
-                      className="flex items-center gap-3 px-3 py-2.5 text-sm text-muted-foreground hover:text-primary rounded-lg hover:bg-white transition-colors"
-                    >
-                      <Mail size={14} />
-                      <span>info@elsacoreindustry.pk</span>
-                    </a>
-                  </div>
+                  {!isMobileProductsOpen && (
+                    <div className="space-y-2">
+                      <a
+                        href="https://wa.me/923233297883"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 px-3 py-2.5 text-sm text-muted-foreground hover:text-primary rounded-lg hover:bg-white transition-colors"
+                      >
+                        <Phone size={14} />
+                        <span>+92 323 329 7883</span>
+                      </a>
+                      <a
+                        href="mailto:info@elsacoreindustry.pk"
+                        className="flex items-center gap-3 px-3 py-2.5 text-sm text-muted-foreground hover:text-primary rounded-lg hover:bg-white transition-colors"
+                      >
+                        <Mail size={14} />
+                        <span>info@elsacoreindustry.pk</span>
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
             </motion.div>
