@@ -16,8 +16,8 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'Elsa Core Industry - Premium Nutraceutical & Wellness Solutions',
-  description: 'Elsa Core Industry delivers premium nutraceutical solutions for reproductive wellness, daily health, and intimate care. Fertelsa, Elfer, and Vagoric - scientifically formulated for better health.',
+  title: 'Elsa Core Industry | Elfer, Fertelsa & Vagoric in Pakistan',
+  description: 'Shop Elfer Tablet, Fertelsa Sachet, and Vagoric Gel from Elsa Core Industry in Pakistan. Order online through WhatsApp with free doorstep delivery.',
   keywords: ['nutraceutical', 'wellness', 'pharmaceutical', 'healthcare', 'supplements', 'Pakistan', 'Karachi', 'Fertelsa', 'Elfer', 'Vagoric', 'fertility support', 'iron supplement', 'vaginal health'],
   authors: [{ name: 'Elsa Core Industry' }],
   creator: 'Elsa Core Industry',
@@ -64,9 +64,25 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Elsa Core Industry',
+    url: 'https://elsacoreindustry.pk',
+  }
+
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Elsa Core Industry',
+    url: 'https://elsacoreindustry.pk',
+  }
+
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} bg-background`}>
       <body className="font-sans antialiased">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

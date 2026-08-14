@@ -8,6 +8,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import Image from 'next/image'
+import { ProductSeoBlock, productImages } from '@/components/product-seo'
 
 export default function FertelsaPage() {
   const ref = useRef(null)
@@ -185,6 +186,23 @@ export default function FertelsaPage() {
           </motion.div>
         </div>
       </section>
+
+      <ProductSeoBlock
+        name="Fertelsa Sachet"
+        slug="fertelsa"
+        description="Fertelsa Sachet combines Myo-Inositol, D-Chiro-Inositol, probiotics, prebiotics, and chromium for women’s reproductive and metabolic wellness support."
+        image={productImages.fertelsa}
+        regularPrice="2,080"
+        salePrice="1,770"
+        priceNumber={1770}
+        faqs={[
+          { question: 'What is the price of Fertelsa Sachet in Pakistan?', answer: 'The current sale price of Fertelsa Sachet is PKR 1,770. The regular price is PKR 2,080.' },
+          { question: 'Where can I buy Fertelsa Sachet online?', answer: 'You can order Fertelsa Sachet online from Elsa Core Industry through WhatsApp.' },
+          { question: 'How can I order Fertelsa Sachet?', answer: 'Message Elsa Core Industry on WhatsApp with your delivery details to place an order.' },
+          { question: 'Does Fertelsa Sachet have free delivery?', answer: 'Yes, Fertelsa Sachet is available with free delivery to your doorstep.' },
+        ]}
+        related={[{ name: 'Elfer Tablet', href: '/products/elfer' }, { name: 'Vagoric Gel', href: '/products/vagoric' }]}
+      />
 
       {/* Disclaimer */}
       <section className="py-12 lg:py-16 bg-background">

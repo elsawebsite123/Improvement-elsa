@@ -1,15 +1,16 @@
 import type { Metadata } from 'next'
 
+const url = 'https://elsacoreindustry.pk/products/vagoric'
+const title = 'Vagoric Gel Price in Pakistan – PKR 780 | Order Online'
+const description = 'Vagoric Gel price in Pakistan is PKR 780. Order online from Elsa Core Industry through WhatsApp and get free delivery to your doorstep.'
+
 export const metadata: Metadata = {
-  title: 'Vagoric Gel - Intimate Wellness & Vaginal Health | Elsa Core Industry',
-  description: 'Vagoric Gel combines boric acid with prebiotics, aloe vera, and hyaluronic acid for intimate wellness. Supports healthy vaginal pH and microbiome balance with soothing hydration.',
-  keywords: ['Vagoric', 'vaginal health', 'intimate wellness', 'pH balance', 'microbiome', 'boric acid', 'nutraceutical'],
-  openGraph: {
-    title: 'Vagoric Gel - Intimate Wellness & Vaginal Health | Elsa Core Industry',
-    description: 'Advanced vaginal care gel for comfort, balance, and intimate wellness.',
-    url: 'https://elsacoreindustry.pk/products/vagoric',
-    type: 'website',
-  },
+  title,
+  description,
+  keywords: ['Vagoric Gel', 'Vagoric Gel price in Pakistan', 'buy Vagoric Gel online', 'Vagoric free delivery', 'vaginal gel Pakistan', 'women intimate wellness Pakistan'],
+  alternates: { canonical: url },
+  openGraph: { title, description, url, siteName: 'Elsa Core Industry', type: 'website', locale: 'en_PK' },
+  twitter: { card: 'summary_large_image', title, description },
 }
 
 export default function VagoriLayout({
