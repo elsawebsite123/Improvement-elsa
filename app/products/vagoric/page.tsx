@@ -8,7 +8,6 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import Image from 'next/image'
-import { ProductSeoBlock, productImages } from '@/components/product-seo'
 
 export default function VagoricPage() {
   const ref = useRef(null)
@@ -184,23 +183,6 @@ export default function VagoricPage() {
           </motion.div>
         </div>
       </section>
-
-      <ProductSeoBlock
-        name="Vagoric Gel"
-        slug="vagoric"
-        description="Vagoric Gel combines boric acid, inulin, aloe vera extract, and hyaluronic acid to support intimate wellness, comfort, and the natural vaginal microbiome."
-        image={productImages.vagoric}
-        regularPrice="918"
-        salePrice="780"
-        priceNumber={780}
-        faqs={[
-          { question: 'What is the price of Vagoric Gel in Pakistan?', answer: 'The current sale price of Vagoric Gel is PKR 780. The regular price is PKR 918.' },
-          { question: 'Where can I buy Vagoric Gel online?', answer: 'You can order Vagoric Gel online from Elsa Core Industry through WhatsApp.' },
-          { question: 'How can I order Vagoric Gel?', answer: 'Message Elsa Core Industry on WhatsApp with your delivery details to place an order.' },
-          { question: 'Does Vagoric Gel have free delivery?', answer: 'Yes, Vagoric Gel is available with free delivery to your doorstep.' },
-        ]}
-        related={[{ name: 'Elfer Tablet', href: '/products/elfer' }, { name: 'Fertelsa Sachet', href: '/products/fertelsa' }]}
-      />
 
       {/* Disclaimer */}
       <section className="py-12 lg:py-16 bg-background">
