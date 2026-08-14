@@ -1,12 +1,13 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Fertelsa Sachet - Women\'s Reproductive Wellness | Elsa Core Industry',
-  description: 'Fertelsa Sachet provides advanced nutraceutical support for women\'s reproductive wellness with Myo-Inositol, D-Chiro-Inositol, probiotics, and prebiotics. Supports hormonal balance and ovarian function.',
-  keywords: ['Fertelsa', 'fertility support', 'women health', 'Myo-Inositol', 'reproductive wellness', 'hormone balance', 'nutraceutical'],
+  title: 'Fertelsa Sachet Price in Pakistan – PKR 1,770 | Elsa Core Industry',
+  description: 'Fertelsa Sachet price in Pakistan is PKR 1,770. Order online from Elsa Core Industry through WhatsApp with free delivery to your doorstep.',
+  keywords: ['Fertelsa Sachet', 'Fertelsa price in Pakistan', 'buy Fertelsa online', 'Fertelsa free delivery', 'myo-inositol sachet Pakistan', 'PCOS supplement Pakistan'],
+  alternates: { canonical: 'https://elsacoreindustry.pk/products/fertelsa' },
   openGraph: {
-    title: 'Fertelsa Sachet - Women\'s Reproductive Wellness | Elsa Core Industry',
-    description: 'Advanced support for women\'s reproductive health with scientifically formulated ingredients.',
+    title: 'Fertelsa Sachet Price in Pakistan – PKR 1,770 | Elsa Core Industry',
+    description: 'Fertelsa Sachet price in Pakistan is PKR 1,770. Order online through WhatsApp with free delivery to your doorstep.',
     url: 'https://elsacoreindustry.pk/products/fertelsa',
     type: 'website',
   },

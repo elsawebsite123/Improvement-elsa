@@ -8,6 +8,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import Image from 'next/image'
+import { ProductFaq } from '@/components/product-faq'
 
 export default function ElferPage() {
   const ref = useRef(null)
@@ -223,6 +224,24 @@ export default function ElferPage() {
           </motion.div>
         </div>
       </section>
+
+      <ProductFaq
+        name="Elfer Tablet"
+        slug="elfer"
+        description="Elfer Tablet is a premium nutraceutical with Ferrous Bisglycinate and essential vitamins for iron and micronutrient support."
+        image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260520-WA0007-RYiAbmxYeMNxqUFP99rLR7z6Travax.jpg"
+        regularPrice="935"
+        salePrice="795"
+        priceNumber={795}
+        faqs={[
+          { question: 'What is the price of Elfer Tablet in Pakistan?', answer: 'The current sale price is PKR 795, reduced from PKR 935.' },
+          { question: 'Where can I buy Elfer Tablet online?', answer: 'You can order Elfer Tablet online from Elsa Core Industry using the existing WhatsApp Order button.' },
+          { question: 'How can I order Elfer Tablet?', answer: 'Use the existing WhatsApp Order button on this page to send your order directly to Elsa Core Industry.' },
+          { question: 'Is Elfer Tablet available with free delivery?', answer: 'Elfer Tablet is available with the existing free delivery service.' },
+          { question: 'Can Elfer Tablet be delivered to my doorstep?', answer: 'Yes, the existing delivery service can deliver Elfer Tablet to your doorstep.' },
+        ]}
+        related={[{ name: 'Fertelsa Sachet', href: '/products/fertelsa' }, { name: 'Vagoric Gel', href: '/products/vagoric' }]}
+      />
 
       {/* Disclaimer */}
       <section className="py-12 lg:py-16 bg-card">

@@ -8,6 +8,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import Image from 'next/image'
+import { ProductFaq } from '@/components/product-faq'
 
 export default function VagoricPage() {
   const ref = useRef(null)
@@ -183,6 +184,24 @@ export default function VagoricPage() {
           </motion.div>
         </div>
       </section>
+
+      <ProductFaq
+        name="Vagoric Gel"
+        slug="vagoric"
+        description="Vagoric Gel combines boric acid with prebiotic, moisturizing, and soothing ingredients for intimate wellness support."
+        image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260520-WA0003-IohnUfXewGifZuTF3gWVBrtKfwsWgR.jpg"
+        regularPrice="918"
+        salePrice="780"
+        priceNumber={780}
+        faqs={[
+          { question: 'What is the price of Vagoric Gel in Pakistan?', answer: 'The current sale price is PKR 780, reduced from PKR 918.' },
+          { question: 'Where can I buy Vagoric Gel online?', answer: 'You can order Vagoric Gel online from Elsa Core Industry using the existing WhatsApp Order button.' },
+          { question: 'How can I order Vagoric Gel?', answer: 'Use the existing WhatsApp Order button on this page to send your order directly to Elsa Core Industry.' },
+          { question: 'Is Vagoric Gel available with free delivery?', answer: 'Vagoric Gel is available with the existing free delivery service.' },
+          { question: 'Can Vagoric Gel be delivered to my doorstep?', answer: 'Yes, the existing delivery service can deliver Vagoric Gel to your doorstep.' },
+        ]}
+        related={[{ name: 'Elfer Tablet', href: '/products/elfer' }, { name: 'Fertelsa Sachet', href: '/products/fertelsa' }]}
+      />
 
       {/* Disclaimer */}
       <section className="py-12 lg:py-16 bg-background">

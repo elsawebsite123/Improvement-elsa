@@ -8,6 +8,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import Image from 'next/image'
+import { ProductFaq } from '@/components/product-faq'
 
 export default function FertelsaPage() {
   const ref = useRef(null)
@@ -185,6 +186,24 @@ export default function FertelsaPage() {
           </motion.div>
         </div>
       </section>
+
+      <ProductFaq
+        name="Fertelsa Sachet"
+        slug="fertelsa"
+        description="Fertelsa Sachet combines Myo-Inositol, D-Chiro-Inositol, probiotics, prebiotics, and micronutrients for women’s reproductive wellness support."
+        image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260520-WA0004-fVVBdLg4IXP535VWB0RBjdtGYNAu4I.jpg"
+        regularPrice="2,080"
+        salePrice="1,770"
+        priceNumber={1770}
+        faqs={[
+          { question: 'What is the price of Fertelsa Sachet in Pakistan?', answer: 'The current sale price is PKR 1,770, reduced from PKR 2,080.' },
+          { question: 'Where can I buy Fertelsa Sachet online?', answer: 'You can order Fertelsa Sachet online from Elsa Core Industry using the existing WhatsApp Order button.' },
+          { question: 'How can I order Fertelsa Sachet?', answer: 'Use the existing WhatsApp Order button on this page to send your order directly to Elsa Core Industry.' },
+          { question: 'Is Fertelsa Sachet available with free delivery?', answer: 'Fertelsa Sachet is available with the existing free delivery service.' },
+          { question: 'Can Fertelsa Sachet be delivered to my doorstep?', answer: 'Yes, the existing delivery service can deliver Fertelsa Sachet to your doorstep.' },
+        ]}
+        related={[{ name: 'Elfer Tablet', href: '/products/elfer' }, { name: 'Vagoric Gel', href: '/products/vagoric' }]}
+      />
 
       {/* Disclaimer */}
       <section className="py-12 lg:py-16 bg-background">

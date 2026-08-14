@@ -1,12 +1,13 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Elfer Tablet - Iron & Micronutrient Support | Elsa Core Industry',
-  description: 'Elfer Tablet offers advanced iron support with Ferrous Bisglycinate, L-Methylfolate, and B vitamins. Perfect for preconception, pregnancy, and daily wellness with enhanced iron absorption.',
-  keywords: ['Elfer', 'iron supplement', 'Ferrous Bisglycinate', 'pregnancy wellness', 'preconception', 'B vitamins', 'nutraceutical'],
+  title: 'Elfer Tablet Price in Pakistan – PKR 795 | Elsa Core Industry',
+  description: 'Elfer Tablet price in Pakistan is PKR 795. Order online from Elsa Core Industry through WhatsApp with free delivery to your doorstep.',
+  keywords: ['Elfer Tablet', 'Elfer Tablet price in Pakistan', 'buy Elfer Tablet online', 'Elfer Tablet free delivery', 'iron supplement Pakistan'],
+  alternates: { canonical: 'https://elsacoreindustry.pk/products/elfer' },
   openGraph: {
-    title: 'Elfer Tablet - Iron & Micronutrient Support | Elsa Core Industry',
-    description: 'Premium iron and micronutrient formula for healthy pregnancy and daily wellness.',
+    title: 'Elfer Tablet Price in Pakistan – PKR 795 | Elsa Core Industry',
+    description: 'Elfer Tablet price in Pakistan is PKR 795. Order online through WhatsApp with free delivery to your doorstep.',
     url: 'https://elsacoreindustry.pk/products/elfer',
     type: 'website',
   },
