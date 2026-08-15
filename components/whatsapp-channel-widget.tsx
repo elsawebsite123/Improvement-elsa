@@ -8,7 +8,7 @@ export function WhatsAppChannelWidget() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3 pointer-events-none">
+    <div className="fixed bottom-6 right-20 sm:right-6 z-[60] flex flex-col items-end gap-3 pointer-events-none">
       {/* Floating Button */}
       <motion.button
         whileHover={{ scale: 1.1 }}
