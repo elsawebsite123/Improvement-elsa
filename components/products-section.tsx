@@ -34,12 +34,7 @@ export function ProductsSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="products" className="py-24 lg:py-32 bg-gradient-to-b from-background via-card to-background relative overflow-hidden">
-      {/* Premium Subtle Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-primary/5 via-transparent to-transparent pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-accent/3 blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 left-0 w-80 h-80 rounded-full bg-primary/3 blur-3xl pointer-events-none" />
-      
+    <section id="products" className="py-24 lg:py-32 bg-background relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8 relative z-10" ref={ref}>
         {/* Section Header */}
         <motion.div
@@ -73,11 +68,8 @@ export function ProductsSection() {
               {/* Card Container */}
               <div className="relative h-full rounded-3xl overflow-hidden bg-white border border-border/40 transition-all duration-500 hover:border-accent/30 hover:shadow-2xl hover:shadow-primary/8 hover-lift flex flex-col">
                 
-                {/* Product Image Container with Elegant Background - Larger */}
-                <div className="relative flex-1 min-h-96 bg-gradient-to-br from-slate-50 via-white to-slate-100 overflow-hidden flex items-center justify-center p-8">
-                  {/* Premium Lighting Effect */}
-                  <div className="absolute inset-0 bg-radial-gradient from-white via-transparent to-slate-100/40 opacity-70" />
-                  <div className="absolute top-0 left-1/4 w-48 h-48 bg-white/40 rounded-full blur-3xl" />
+                {/* Product Image Container */}
+                <div className="relative flex-1 min-h-96 bg-muted/20 overflow-hidden flex items-center justify-center p-8">
                   
                   {/* Product Image */}
                   <div className="relative z-10 w-full h-full flex items-center justify-center">
