@@ -72,7 +72,7 @@ export default function VagoricPage() {
               transition={{ duration: 0.6 }}
               className="relative rounded-3xl overflow-hidden"
             >
-              <div className="relative h-96 lg:h-[500px] bg-gradient-to-br from-slate-50 via-white to-slate-100 flex items-center justify-center p-8">
+              <div className="relative h-96 lg:h-[500px] bg-background flex items-center justify-center p-4">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260520-WA0003-IohnUfXewGifZuTF3gWVBrtKfwsWgR.jpg"
                   alt="Vagoric Gel"

@@ -74,10 +74,7 @@ export function ProductsSection() {
               <div className="relative h-full rounded-3xl overflow-hidden bg-white border border-border/40 transition-all duration-500 hover:border-accent/30 hover:shadow-2xl hover:shadow-primary/8 hover-lift flex flex-col">
                 
                 {/* Product Image Container with Elegant Background - Larger */}
-                <div className="relative flex-1 min-h-96 bg-gradient-to-br from-slate-50 via-white to-slate-100 overflow-hidden flex items-center justify-center p-8">
-                  {/* Premium Lighting Effect */}
-                  <div className="absolute inset-0 bg-radial-gradient from-white via-transparent to-slate-100/40 opacity-70" />
-                  <div className="absolute top-0 left-1/4 w-48 h-48 bg-white/40 rounded-full blur-3xl" />
+                <div className="relative flex-1 min-h-96 bg-background overflow-hidden flex items-center justify-center p-4">
                   
                   {/* Product Image */}
                   <div className="relative z-10 w-full h-full flex items-center justify-center">
