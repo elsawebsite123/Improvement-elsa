@@ -75,7 +75,7 @@ export default function FertelsaPage() {
             >
               <div className="relative h-96 lg:h-[500px] bg-gradient-to-br from-slate-50 via-white to-slate-100 flex items-center justify-center p-8">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260520-WA0004-fVVBdLg4IXP535VWB0RBjdtGYNAu4I.jpg"
+                  src="/images/products/fertelsa.png"
                   alt="Fertelsa Sachet"
                   width={300}
                   height={400}

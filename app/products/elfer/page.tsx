@@ -83,7 +83,7 @@ export default function ElferPage() {
             >
               <div className="relative h-96 lg:h-[500px] bg-gradient-to-br from-slate-50 via-white to-slate-100 flex items-center justify-center p-8">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260520-WA0007-RYiAbmxYeMNxqUFP99rLR7z6Travax.jpg"
+                  src="/images/products/elfer.png"
                   alt="Elfer Tablet"
                   width={300}
                   height={400}

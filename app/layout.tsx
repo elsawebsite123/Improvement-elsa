@@ -38,6 +38,11 @@ export const metadata: Metadata = {
     creator: '@elsacoreindustry',
   },
   metadataBase: new URL('https://elsacoreindustry.pk'),
+  icons: {
+    icon: '/images/logo.png',
+    shortcut: '/images/logo.png',
+    apple: '/images/logo.png',
+  },
   alternates: {
     canonical: 'https://elsacoreindustry.pk',
   },

@@ -10,7 +10,7 @@ const products = [
     name: "Fertelsa",
     subtitle: "Fertility Support",
     description: "Myo Inositol with Probiotics",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260520-WA0004-fVVBdLg4IXP535VWB0RBjdtGYNAu4I.jpg",
+    image: "/images/products/fertelsa.png",
     highlights: ["Hormonal Balance", "Digestive Microbiome", "Insulin & Glucose Metabolism", "Nutrient Absorption"],
   },
   {

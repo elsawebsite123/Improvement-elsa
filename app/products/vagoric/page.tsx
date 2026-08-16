@@ -73,7 +73,7 @@ export default function VagoricPage() {
             >
               <div className="relative h-96 lg:h-[500px] bg-gradient-to-br from-slate-50 via-white to-slate-100 flex items-center justify-center p-8">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260520-WA0003-IohnUfXewGifZuTF3gWVBrtKfwsWgR.jpg"
+                  src="/images/products/vagoric.png"
                   alt="Vagoric Gel"
                   width={300}
                   height={400}

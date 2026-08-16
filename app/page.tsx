@@ -5,15 +5,29 @@ import { ContactSection } from '@/components/contact-section'
 import { Footer } from '@/components/footer'
 import { ValuesSection } from '@/components/values-section'
 
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Elsa Core Industry',
+  url: 'https://www.elsacoreindustry.pk/',
+  logo: 'https://www.elsacoreindustry.pk/images/logo.png',
+}
+
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-background">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <main className="min-h-screen bg-background">
       <Navbar />
       <HeroSection />
       <AboutSection />
       <ValuesSection />
       <ContactSection />
-      <Footer />
-    </main>
+        <Footer />
+      </main>
+    </>
   )
 }
