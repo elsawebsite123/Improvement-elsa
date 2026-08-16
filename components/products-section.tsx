@@ -17,14 +17,14 @@ const products = [
     name: "Elfer",
     subtitle: "Daily Wellness",
     description: "Iron, Folic Acid & B-Complex",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260520-WA0007-RYiAbmxYeMNxqUFP99rLR7z6Travax.jpg",
+    image: "/images/products/elfer.png",
     highlights: ["Ferrous Bisglycinate", "Folic Acid", "Vitamin B12, B6 & C", "Enhanced Zinc"],
   },
   {
     name: "Vagoric",
     subtitle: "Women Wellness",
     description: "Vaginal Microbiome & pH Support Gel",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260520-WA0003-IohnUfXewGifZuTF3gWVBrtKfwsWgR.jpg",
+    image: "/images/products/vagoric.png",
     highlights: ["Microbiome Balance", "pH Support", "Prebiotic Formula", "Gut Health"],
   },
 ]

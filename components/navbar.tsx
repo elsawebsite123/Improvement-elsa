@@ -21,17 +21,17 @@ const productLinks = [
   { 
     href: '/products/fertelsa', 
     label: 'Fertelsa Sachet',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260520-WA0004-fVVBdLg4IXP535VWB0RBjdtGYNAu4I.jpg'
+    image: '/images/products/fertelsa.png'
   },
   { 
     href: '/products/elfer', 
     label: 'Elfer Tablet',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260520-WA0007-RYiAbmxYeMNxqUFP99rLR7z6Travax.jpg'
+    image: '/images/products/elfer.png'
   },
   { 
     href: '/products/vagoric', 
     label: 'Vagoric Gel',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260520-WA0003-IohnUfXewGifZuTF3gWVBrtKfwsWgR.jpg'
+    image: '/images/products/vagoric.png'
   },
 ]
 
