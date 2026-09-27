@@ -5,6 +5,7 @@ import { ContactSection } from '@/components/contact-section'
 import { Footer } from '@/components/footer'
 import { WhatsAppButton } from '@/components/whatsapp-button'
 import { ValuesSection } from '@/components/values-section'
+import { ComplianceSection } from '@/components/compliance-section'
 import { WhatsAppChannelWidget } from '@/components/whatsapp-channel-widget'
 
 export default function HomePage() {
@@ -14,6 +15,7 @@ export default function HomePage() {
       <HeroSection />
       <AboutSection />
       <ValuesSection />
+      <ComplianceSection />
       <ContactSection />
       <Footer />
       <WhatsAppButton />
