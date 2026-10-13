@@ -2,34 +2,30 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { MessageCircle, X } from 'lucide-react'
+import { Leaf, MessageCircle, X } from 'lucide-react'
 
 export function WhatsAppChannelWidget() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3 pointer-events-none">
-      {/* Floating Button */}
+    <div className="fixed inset-x-5 bottom-4 z-40 sm:inset-x-auto sm:bottom-6 sm:right-6 sm:w-[360px] pointer-events-none">
+      {/* Floating banner */}
       <motion.button
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
+        whileHover={{ y: -2 }}
+        whileTap={{ scale: 0.98 }}
         onClick={() => setIsOpen(!isOpen)}
-            className="flex h-14 items-center gap-3 rounded-full bg-white px-4 text-green-700 shadow-xl shadow-green-900/10 ring-1 ring-green-100 transition-all duration-300 hover:shadow-2xl pointer-events-auto cursor-pointer"
-        aria-label="WhatsApp Channel"
+        className="relative flex w-full min-h-[66px] items-center gap-4 rounded-2xl bg-gradient-to-r from-[#58e398] to-[#45d47f] px-4 text-white shadow-xl shadow-green-900/15 transition-all duration-300 pointer-events-auto cursor-pointer"
+        aria-label="ELSA CORE INDUSTRY Daily Health Tips Learn more"
+        aria-expanded={isOpen}
       >
-        {/* Pulse animation */}
-        <motion.div
-          animate={{ scale: [1, 1.2, 1] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="absolute inset-0 rounded-full bg-green-500/20 -z-10 pointer-events-none"
-        />
-        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#25D366] text-white">
-          <MessageCircle size={20} className="drop-shadow-sm relative z-10" />
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/15">
+          <Leaf size={22} strokeWidth={1.8} />
         </span>
-        <span className="text-left leading-tight">
-          <span className="block text-[10px] font-bold uppercase tracking-wider text-green-700">Elsa Core Industry</span>
-          <span className="block text-xs font-medium text-gray-600">Daily Health Tips</span>
+        <span className="flex-1 text-left leading-tight">
+          <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-white/90">Elsa Core Industry</span>
+          <span className="block font-serif text-lg font-bold">Daily Health Tips</span>
         </span>
+        <span className="shrink-0 text-sm font-medium text-white/90">Learn more</span>
       </motion.button>
 
       {/* Widget Card */}

@@ -15,7 +15,7 @@ export function WhatsAppButton() {
       transition={{ delay: 2, type: "spring", stiffness: 200 }}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="fixed bottom-6 right-6 z-50 group"
+      className="fixed bottom-[5.75rem] right-5 z-50 group sm:bottom-24 sm:right-6"
       aria-label="Contact Elsa Core Industry on WhatsApp"
     >
       {/* Tooltip with logo on hover */}
