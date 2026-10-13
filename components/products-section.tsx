@@ -12,6 +12,8 @@ const products = [
     description: "Myo Inositol with Probiotics",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260520-WA0004-fVVBdLg4IXP535VWB0RBjdtGYNAu4I.jpg",
     highlights: ["Hormonal Balance", "Digestive Microbiome", "Insulin & Glucose Metabolism", "Nutrient Absorption"],
+    price: "PKR 1,770",
+    originalPrice: "PKR 2,080",
   },
   {
     name: "Elfer",
@@ -19,6 +21,8 @@ const products = [
     description: "Iron, Folic Acid & B-Complex",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260520-WA0007-RYiAbmxYeMNxqUFP99rLR7z6Travax.jpg",
     highlights: ["Ferrous Bisglycinate", "Folic Acid", "Vitamin B12, B6 & C", "Enhanced Zinc"],
+    price: "PKR 795",
+    originalPrice: "PKR 935",
   },
   {
     name: "Vagoric",
@@ -26,6 +30,8 @@ const products = [
     description: "Vaginal Microbiome & pH Support Gel",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260520-WA0003-IohnUfXewGifZuTF3gWVBrtKfwsWgR.jpg",
     highlights: ["Microbiome Balance", "pH Support", "Prebiotic Formula", "Gut Health"],
+    price: "PKR 780",
+    originalPrice: "PKR 918",
   },
 ]
 
@@ -115,6 +121,11 @@ export function ProductsSection() {
                     {product.description}
                   </p>
 
+                  <div className="mb-5 flex items-end gap-2">
+                    <span className="text-2xl font-bold text-primary">{product.price}</span>
+                    <span className="pb-0.5 text-sm text-muted-foreground line-through">{product.originalPrice}</span>
+                  </div>
+
                   {/* Highlights Grid */}
                   <div className="space-y-2.5 mb-6">
                     {product.highlights.map((highlight, idx) => (
@@ -132,6 +143,16 @@ export function ProductsSection() {
                       </motion.div>
                     ))}
                   </div>
+
+                  <a
+                    href={`https://wa.me/923233297883?text=${encodeURIComponent(`I want to order ${product.name}`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mb-5 flex items-center justify-between gap-3 rounded-xl bg-[#25D366]/10 px-4 py-3 text-sm font-semibold text-[#168c46] transition-colors hover:bg-[#25D366]/20"
+                  >
+                    <span>Free delivery</span>
+                    <span>Order on WhatsApp</span>
+                  </a>
 
                   {/* Divider */}
                   <div className="h-px bg-gradient-to-r from-transparent via-border/40 to-transparent mb-5" />

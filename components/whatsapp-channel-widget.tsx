@@ -14,7 +14,7 @@ export function WhatsAppChannelWidget() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 rounded-full bg-green-500 text-white shadow-lg shadow-green-500/30 flex items-center justify-center hover:shadow-xl hover:shadow-green-500/40 transition-all duration-300 relative pointer-events-auto cursor-pointer"
+            className="flex h-14 items-center gap-3 rounded-full bg-white px-4 text-green-700 shadow-xl shadow-green-900/10 ring-1 ring-green-100 transition-all duration-300 hover:shadow-2xl pointer-events-auto cursor-pointer"
         aria-label="WhatsApp Channel"
       >
         {/* Pulse animation */}
@@ -23,7 +23,13 @@ export function WhatsAppChannelWidget() {
           transition={{ duration: 2, repeat: Infinity }}
           className="absolute inset-0 rounded-full bg-green-500/20 -z-10 pointer-events-none"
         />
-        <MessageCircle size={24} className="drop-shadow-sm relative z-10" />
+        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#25D366] text-white">
+          <MessageCircle size={20} className="drop-shadow-sm relative z-10" />
+        </span>
+        <span className="text-left leading-tight">
+          <span className="block text-[10px] font-bold uppercase tracking-wider text-green-700">Elsa Core Industry</span>
+          <span className="block text-xs font-medium text-gray-600">Daily Health Tips</span>
+        </span>
       </motion.button>
 
       {/* Widget Card */}
