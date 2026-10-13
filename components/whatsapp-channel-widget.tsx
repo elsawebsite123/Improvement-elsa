@@ -14,7 +14,7 @@ export function WhatsAppChannelWidget() {
         whileHover={{ y: -2 }}
         whileTap={{ scale: 0.98 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="relative flex w-full min-h-[66px] items-center gap-4 rounded-2xl bg-gradient-to-r from-[#58e398] to-[#45d47f] px-4 text-white shadow-xl shadow-green-900/15 transition-all duration-300 pointer-events-auto cursor-pointer"
+        className="relative flex w-full min-h-[66px] items-center gap-3 rounded-2xl bg-gradient-to-r from-[#58e398] to-[#45d47f] px-4 text-white shadow-xl shadow-green-900/15 transition-all duration-300 pointer-events-auto cursor-pointer"
         aria-label="ELSA CORE INDUSTRY Daily Health Tips Learn more"
         aria-expanded={isOpen}
       >
@@ -22,8 +22,8 @@ export function WhatsAppChannelWidget() {
           <Leaf size={22} strokeWidth={1.8} />
         </span>
         <span className="flex-1 text-left leading-tight">
-          <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-white/90">Elsa Core Industry</span>
-          <span className="block font-serif text-lg font-bold">Daily Health Tips</span>
+          <span className="block text-[9px] font-semibold uppercase tracking-[0.18em] text-white/90">Elsa Core Industry</span>
+          <span className="block whitespace-nowrap font-serif text-base font-bold">Daily Health Tips</span>
         </span>
         <span className="shrink-0 text-sm font-medium text-white/90">Learn more</span>
       </motion.button>

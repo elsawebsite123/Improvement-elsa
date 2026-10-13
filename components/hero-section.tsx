@@ -140,9 +140,6 @@ export function HeroSection() {
             <button
               onClick={() => {
                 openProductsDropdown()
-                window.setTimeout(() => {
-                  document.getElementById('products')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-                }, 100)
               }}
               className="group px-8 py-4 bg-primary text-primary-foreground rounded-full text-base font-medium hover:bg-primary/90 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 flex items-center gap-2 cursor-pointer"
             >
